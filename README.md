@@ -2,7 +2,17 @@
 
 课余时间写个仿 HarmonyOS 控制中心样式的控制中心，给老华为弄点新鲜玩意
 
-[![GitHub Release](https://img.shields.io/github/v/release/GSpaceKS/HMOSControlCenter)](https://github.com/GSpaceKS/HMOSControlCenter/releases/latest)
+[![GitHub Release](https://img.shields.io/github/v/release/GSpaceKS/HMOSControlCenter?include_prereleases)](https://github.com/GSpaceKS/HMOSControlCenter/releases/latest)
+
+## 目录
+
+- [功能可用性](#功能可用性)
+- [快捷开关说明](#快捷开关说明)
+  - [5G 开关](#5g-开关)
+  - [其他问题](#其他问题)
+- [展示图](#展示图)
+- [反馈](#反馈)
+- [说明](#说明)
 
 ## 功能可用性
 
@@ -12,7 +22,7 @@
 | 功能 | 普通模式 | Shizuku 模式 |
 | --- | --- | --- |
 | 手电筒 | ✅ | ✅ |
-| 响铃（响铃/振动/静音） | ✅ | ✅ |
+| 铃声状态 | ✅ | ✅ |
 | 旋转锁定 | ✅ | ✅ |
 | 免打扰 | ✅ | ✅ |
 | 护眼 | ✅ | ✅ |
@@ -52,9 +62,40 @@
 
 </details>
 
-```text
+## 快捷开关说明
 
-```
+- 面板默认摆 8 颗（移动数据、个人热点、飞行模式、免打扰、响铃、深色模式、位置信息、NFC），其余在编辑页里
+- **个人热点在 `普通模式` 下读不到状态**，胶囊会一直显示「关」。这是如实反映（系统不告诉我们），不是开关坏了。使用 Shizuku 后能读能开。开热点时系统会自动关掉 Wi-Fi，这是手机自身的行为（华为的 `WLAN 桥` 跟 `个人热点` 整合起来了，但我们无权调用）
+- **蓝牙开关在 `普通模式` 下**系统会弹一个「软件请求开启/关闭蓝牙」的确认框；它的层级比面板低，会被面板盖住，看着像没反应。把面板收起来就能看到那个框。Shizuku 模式下不再弹框
+
+### 5G 开关
+
+- 面板上**有没有**这颗开关，取决于软件能否确认这台手机支持 5G。如果没识别出来但你的手机确实是 5G 机型时，可以在设置页里手动打开
+- **需要 Shizuku 模式才能打开**
+
+### 其他问题
+
+1. **免打扰开着时切到静音**，华为会闪一句系统提示条。这句提示关不掉（系统对「免打扰 + 静音」这个组合本身不乐意），但铃声确实已经改好了。
+2. **华为分享没有**，它的入口被华为的签名权限挡着
+
+## 展示图
+
+<details>
+<summary>设置页面</summary>
+
+[![设置页面](show-img/show-setting.jpg)](show-img/show-setting.jpg)
+
+
+</details>
+
+<details>
+<summary>控制中心页面</summary>
+
+[![控制中心页面](show-img/show-Controller.jpg)](show-img/show-Controller.jpg)
+
+
+</details>
+
 ## 反馈
 
 遇到问题或有建议，欢迎通过 [Issues](https://github.com/GSpaceKS/HMOSControlCenter/issues) 反馈。为了便于排查，请尽量附上以下信息：
